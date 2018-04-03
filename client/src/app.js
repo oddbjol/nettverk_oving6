@@ -97,7 +97,7 @@ class ArticleDetails extends React.Component<{match: {params: {id: number}}}, {a
   }
 }
 
-class NewArticle extends React.Component<{category: number}> {
+class NewArticle extends React.Component<{category: string}> {
   form;
   title;
   abstract;
@@ -141,7 +141,7 @@ class NewArticle extends React.Component<{category: number}> {
   }
 }
 
-class Articles extends React.Component<{match: {params: {id: number, category: string, popular: boolean }}}> {
+class Articles extends React.Component<{match: {params: {id: number, category: string, popular: string }}}> {
   table;
   newArticle;
 
@@ -162,8 +162,7 @@ class Articles extends React.Component<{match: {params: {id: number, category: s
 
 
           { (this.props.match.params.category != null && this.props.match.params.category != 'null' &&
-          this.props.match.params.popular != null && this.props.match.paramsnp..
-              .popular == 'false') &&
+          this.props.match.params.popular != null && this.props.match.params.popular == 'false') &&
             <NewArticle ref={e => (this.newArticle = e)} category={this.props.match.params.category} />
           }
       </div>
